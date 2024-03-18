@@ -34,10 +34,9 @@ module ActiveLinkTo
     if wrap_tag.present?
       wrap_class << active_link_to_class(url, active_options)
       wrap_class.strip!
-    else
-      css_class << active_link_to_class(url, active_options)
-      css_class.strip!
     end
+    css_class << active_link_to_class(url, active_options)
+    css_class.strip!
 
     link_options[:class] = css_class if css_class.present?
     link_options['aria-current'] = 'page' if is_active_link?(url, active_options[:active])
